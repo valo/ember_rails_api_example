@@ -1,11 +1,13 @@
 <section id="main">
-  <ul id="projects-list">
+  <table id="projects-list">
     {{#each project in controller}}
-      <li>
-        <label>{{project.name}}</label><button {{action 'view'}} class="view">View</button><button {{action 'destroy'}} class="destroy">Delete</button>
-      </li>
+      <tr>
+        <td>{{project.name}}</td>
+        <td><button {{action 'view'}} class="view">View</button></td>
+        <td><button {{action 'destroy'}} class="destroy">Delete</button></td>
+      </tr>
     {{/each}}
-  </ul>
+  </table>
 </section>
 <section>
   <h2>Create Project</h2>

@@ -4,6 +4,7 @@
 #= require ember-data
 #= require_self
 #= require task_manager
+#= require bootstrap-sprockets
 
 # for more details see: http://emberjs.com/guides/application/
 window.TaskManager = Ember.Application.create
