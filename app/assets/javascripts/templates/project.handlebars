@@ -1,0 +1,16 @@
+<section id="main">
+  <ul id="project-view">
+    {{#each task in tasks itemController="Task"}}
+      <li>
+        {{input type="checkbox" name="completed" checked=task.completed action="saveTask" }}
+        <label>{{task.name}}</label>
+        <button {{action 'destory'}} class="destroy">Delete</button>
+      </li>
+    {{/each}}
+  </ul>
+</section>
+<section>
+  <h2>Add Task</h2>
+  {{ input type="text" placeholder="Task name" value=newTaskName action="createTask"}}
+</section>
+{{# link-to "projects.index" }}All projects{{/link-to}}

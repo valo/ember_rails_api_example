@@ -12,13 +12,13 @@ class TasksController < ApplicationController
   def update
     task = Task.find(params[:id])
 
-    task.update(task_params)
+    task.update(update_task_params)
 
     respond_with task
   end
 
   def create
-    task = Task.create(task_params)
+    task = Task.create(create_task_params)
 
     task.save
 
@@ -33,7 +33,11 @@ class TasksController < ApplicationController
 
   private
 
-  def task_params
-    params.require(:task).permit(:name)
+  def create_task_params
+    params.require(:task).permit(:name, :completed, :project_id)
+  end
+
+  def update_task_params
+    params.require(:task).permit(:name, :completed)
   end
 end
