@@ -25,6 +25,13 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 gem 'responders', '~> 2.0'
 
+# Ember
+gem 'ember-rails'
+gem 'ember-source', '~> 1.9.0' # or the version you need
+
+# Active model serializers
+gem 'active_model_serializers'
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
