@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe Project do
-  it { should have_many :tasks }
+describe Task do
+  it { should belong_to :project }
   it { should validate_presence_of :name }
 end
