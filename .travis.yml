@@ -4,7 +4,6 @@ rvm:
   - 2.1
   - 2.2
 script: 
-  - RAILS_ENV=test bundle exec rake db:migrate --trace
-  - bundle exec rake db:test:prepare
-  - bundle exec rspec spec/
+  - RAILS_ENV=test bundle exec rake db:schema:load:
+  - bundle exec rspec
 bundler_args: --binstubs=./bundler_stubs
