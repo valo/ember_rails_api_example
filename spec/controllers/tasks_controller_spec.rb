@@ -18,7 +18,7 @@ describe TasksController do
   end
 
   context "#create" do
-    let(:task_attributes) { attributes_for(:task) }
+    let(:task_attributes) { create(:task).attributes }
 
     before do
       post :create, task: task_attributes, format: :json
@@ -27,7 +27,7 @@ describe TasksController do
     it { should respond_with(:created) }
 
     context "when name is blank" do
-      let(:task_attributes) { attributes_for(:task).merge(name: "") }
+    let(:task_attributes) { create(:task).attributes.merge("name" => "") }
 
       it { should respond_with(:unprocessable_entity) }
       it "returns the errors" do
